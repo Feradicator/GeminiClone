@@ -72,7 +72,10 @@ const Main = () => {
                     <input onChange={(e)=>setInput(e.target.value)} value={input} type="text" placeholder='Enter a prompt here'/>
                     <img src={assets.gallery_icon} alt="" />
                     <img src={assets.mic_icon} alt="" />
+                    {input?
                     <img onClick={()=>onSent()} src={assets.send_icon} alt="" />
+                :null}
+                    
                 </div>
                 <p className="bottom-info">
                   Gemini may display inaacurate info,including about people ,so double-check   
