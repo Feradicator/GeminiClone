@@ -4,6 +4,13 @@ import { assets } from '../../assets/assets'
 import { Context } from '../../context/context'
 const Main = () => {
     const {onSent,recentPrompt,showResult,loading,resultData,setInput,input}=useContext(Context)
+    const handleEnterKeyPress = (event) => {
+        if (event.key === 'Enter') {
+            onSent();
+          
+          
+        }
+      };
   return (
     <div className='main'>
         <div className="nav">
@@ -69,7 +76,7 @@ const Main = () => {
            
             <div className="main-bottom">
                 <div className="search-box">
-                    <input onChange={(e)=>setInput(e.target.value)} value={input} onKeyDown={()=>onSent()} type="text" placeholder='Enter a prompt here'/>
+                    <input onChange={(e)=>setInput(e.target.value)} value={input} onKeyDown={handleEnterKeyPress }type="text" placeholder='Enter a prompt here'/>
                     <img src={assets.gallery_icon} alt="" />
                     <img src={assets.mic_icon} alt="" />
                     {input?
