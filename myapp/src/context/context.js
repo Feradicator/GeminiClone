@@ -43,9 +43,12 @@ const ContextProvide=(props)=>{
            for(let i=0   ;i<responseArray.length;i++)
            {
             if(i===0 || i%2!==1)
-                newResponse+=responseArray[i];
+                {
+                    newResponse+=responseArray[i];
+                }
+               
             else{
-                newResponse+="<b>"+responseArray[i]+"</b>"
+                newResponse+="<b>"+responseArray[i]+"</b>";
             }
            }
            let newResponse2=newResponse.split("*").join("</br>")
